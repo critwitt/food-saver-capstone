@@ -1,51 +1,36 @@
 import { useState, useEffect } from "react";
+import { Routes, Route } from 'react-router-dom';
+
+import Login from "./components/Login"
+import Home from './components/Home'
+
 import "./App.css"
 
 function App() {
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState(false)
 
-  const [formData, setFormData] = useState({
-    username: '',
-    password: ''
-  })
-
-  const { username, password } = formData
-
-  function handleChange (e) {
-    const { name, value } = e.target
-    setFormData({...formData, [name]: value})
+  function updateUser (user) {
+    setUser(user)
   }
 
-  function onSubmit (e) {
-    e.preventDefault()
-    const user = {
-      username,
-      password
-    }
-
-    fetch('/login', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(user)
+  useEffect(() => {
+    fetch('/authorized_user')
+    .then(res => {
+      if (res.ok) {
+        res.json().then(user => {
+          updateUser(user)
+        })
+      }
     })
-    .then(res => res.json())
-    .then(user => setUser(user))
-  }
+  }, [])
 
   return (
-    <div className="signup">
-      <h1>Login</h1>
-      <form className="form" onSubmit={onSubmit}>
-        <div className="box username">
-          <h2>Username</h2>
-          <input className="input" name='username' value={username} onChange={handleChange}/>
-        </div>
-        <div className="box password">
-          <h2>Password</h2>
-          <input type='password' className="input" name='password' value={password} onChange={handleChange}/>
-        </div>
-        <input className='submit' type='submit' />
-      </form>
+    <div className="App">
+    {!user? <Login error={'Please Login'} updateUser={updateUser}/> :
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    }
     </div>
   );
 }
