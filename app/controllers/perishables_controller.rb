@@ -21,6 +21,18 @@ class PerishablesController < ApplicationController
         head :no_content
     end
 
+    def update_perishables
+        perishables = Perishable.all
+        perishables.each do |perishable|
+            if ((Date.today - perishable.date_entered).to_i < perishable.ingredient.shelf_life)
+                perishable.update(expired: false)
+            else
+                perishable.update(expired: true)
+            end
+        end
+        render json: perishables, status: :ok
+    end
+
     private
 
     def perishable_params
