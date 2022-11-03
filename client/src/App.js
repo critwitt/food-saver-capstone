@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Login from "./components/Login"
 import Home from './components/Home'
+import NavBar from "./components/NavBar"
 
 import "./App.css"
 
@@ -26,11 +27,13 @@ function App() {
 
   return (
     <div className="App">
-    {!user? <Login error={'Please Login'} updateUser={updateUser}/> :
-      <Routes>
-        <Route path='/' element={<Home />} />
-      </Routes>
-    }
+      <NavBar />
+      {!user? <Login error={'Please Login'} updateUser={updateUser}/> :
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>
+      }
     </div>
   );
 }

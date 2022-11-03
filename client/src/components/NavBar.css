@@ -1,0 +1,13 @@
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(65, 214, 65);
+    padding: 10px;
+    font-size: 30px;
+}
+
+.navlink {
+    font-family: monospace;
+    text-decoration: none;
+    color: rgb(239, 236, 242);
+}
