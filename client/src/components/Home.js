@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import FoodCard from "./FoodCard"
+import NewPerishable from "./NewPerishable"
 
 function Home () {
 
@@ -14,8 +15,9 @@ function Home () {
 
     return (
         <div>
-            <h1>Expiring Soon</h1>
+            <h1>Your Fridge</h1>
             <div className="foodcards">
+                <NewPerishable />
                 {ingredients.map(ingredient => <FoodCard ingredient={ingredient} key={ingredient.id}/> )}
             </div>
         </div>

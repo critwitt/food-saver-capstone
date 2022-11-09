@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from "./components/Login"
 import Home from './components/Home'
 import NavBar from "./components/NavBar"
+import Recipes from "./components/Recipes"
 
 import "./App.css"
 
@@ -31,6 +32,7 @@ function App() {
       {!user? <Login error={'Please Login'} updateUser={updateUser}/> :
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/recipes' element={<Recipes />} />
           <Route path='/login' element={<Login />} />
         </Routes>
       }
