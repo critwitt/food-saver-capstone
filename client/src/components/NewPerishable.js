@@ -56,7 +56,7 @@ function NewPerishable () {
             <div className="plussign">+</div>
             <div className="newfood">Add New Food</div>
             <Modal isOpen={isOpen}>
-                <form onSubmit={handleSubmit}>
+                <form>
                     <button onClick={closeModal}>Close</button>
                     <div>Perishables</div>
                     <div>Food</div>
@@ -67,7 +67,7 @@ function NewPerishable () {
                     <input onChange={handleChange}></input>
                     <div>Date Bought</div>
                     <input name='date_entered' onChange={handleChange}></input>
-                    <button type='submit'>Submit</button>
+                    <button type='submit' onClick={handleSubmit}>Submit</button>
                 </form>
             </Modal>
         </div>

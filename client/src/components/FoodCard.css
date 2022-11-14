@@ -28,3 +28,11 @@
 .plussign {
     font-size: 100px;
 }
+
+.image {
+    height: 130px;
+}
+
+.steps {
+    display: flex;
+}

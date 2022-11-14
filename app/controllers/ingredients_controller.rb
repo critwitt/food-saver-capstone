@@ -15,6 +15,12 @@ class IngredientsController < ApplicationController
         render json: ingredient, status: :created
     end
 
+    def update
+        ingredient = Ingredient.find(params[:id])
+        ingredient.update(ingredient_params)
+        render json: ingredient, status: :ok
+    end
+
     def destroy
         ingredient = Ingredient.find(params[:id])
         ingredient.destroy
@@ -24,7 +30,7 @@ class IngredientsController < ApplicationController
     private
 
     def ingredient_params
-        params.permit(:name, :perishable, :shelf_life)
+        params.permit(:name, :perishable, :shelf_life, :image)
     end
 
 end

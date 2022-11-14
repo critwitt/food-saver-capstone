@@ -19,8 +19,3 @@
 .input {
   border-radius: 10px;
 }
-
-.foodcards {
-  display: flex;
-  flex-wrap: wrap;
-}

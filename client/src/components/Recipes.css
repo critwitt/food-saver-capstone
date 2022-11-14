@@ -1,0 +1,5 @@
+
+.recipecards {
+    display: flex;
+    flex-wrap: wrap;
+}

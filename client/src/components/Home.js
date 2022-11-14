@@ -3,22 +3,26 @@ import { useState, useEffect } from 'react'
 import FoodCard from "./FoodCard"
 import NewPerishable from "./NewPerishable"
 
+import './Home.css'
+
 function Home () {
 
-    const [ingredients, setIngredients] = useState([])
+    const [user, setUser] = useState(false)
 
     useEffect(() => {
-        fetch('/perishables')
+        fetch('/authorized_user')
         .then(res => res.json())
-        .then(data => setIngredients(data))
-    }, [])
+        .then(user => setUser(user))
+    },[])
+
+    console.log(user)
 
     return (
         <div>
             <h1>Your Fridge</h1>
             <div className="foodcards">
                 <NewPerishable />
-                {ingredients.map(ingredient => <FoodCard ingredient={ingredient} key={ingredient.id}/> )}
+                {user ? user.ingredients.map(ingredient => <FoodCard user={user} ingredient={ingredient} key={ingredient.id}/>) : "Loading"}
             </div>
         </div>
     )

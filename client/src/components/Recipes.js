@@ -1,6 +1,9 @@
 import {useEffect, useState} from 'react';
 
-import RecipeCard from '../RecipeCard';
+import RecipeCard from './RecipeCard';
+import './Recipes.css'
+
+import NewRecipe from './NewRecipe'
 
 function Recipes () {
     const [recipes, setRecipes] = useState([])
@@ -12,7 +15,8 @@ function Recipes () {
     }, [])
 
     return (
-        <div>
+        <div className='recipecards'>
+            <NewRecipe />
             {recipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)}
         </div>
     )
