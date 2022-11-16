@@ -14,8 +14,6 @@ function RecipePage () {
         .then(data => setRecipe(data))
     },[id])
 
-    console.log(recipe)
-
     return(
         <div>
             {recipe.ingredients ? <h1 className='title'>{recipe.name}</h1> : <h1>Loading</h1>}

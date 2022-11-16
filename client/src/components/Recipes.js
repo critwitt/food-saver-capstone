@@ -5,25 +5,22 @@ import './Recipes.css'
 
 import NewRecipe from './NewRecipe'
 
-function Recipes ({user, setRecipes, recipes}) {
+function Recipes ({ ing, user, setRecipes, recipes}) {
 
     const [toggleRecipes, setToggleRecipes] = useState(true)
 
     function handleClick () {
         setToggleRecipes(!toggleRecipes)
-        if (toggleRecipes) {
-            fetch(`/selectedrecipes?id=${user.id}`)
-            .then(res => res.json())
-            .then(data => setRecipes(data))
-        } else if (window.location.href.slice(42)) {
-            fetch(`/searchrecipe?id=${window.location.href.slice(42)}`)
+        if (window.location.href.slice(42)) {
+            fetch(`/selectedrecipes?all_ingredients=${toggleRecipes}&ingredient_exists=true&ingredient_id=${window.location.href.slice(42)}&user_id=${user.id}`)
             .then(res => res.json())
             .then(data => setRecipes(data))
         } else {
-            fetch(`/recipes`)
+            fetch(`/selectedrecipes?all_ingredients=${toggleRecipes}&ingredient_exists=false&user_id=${user.id}`)
             .then(res => res.json())
             .then(data => setRecipes(data))
         }
+
     }
 
     return (

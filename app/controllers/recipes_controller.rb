@@ -24,13 +24,26 @@ class RecipesController < ApplicationController
     end
 
     def search
-        recipes = Recipe.all.select {|recipe| recipe.ingredients.any? {|ingredient| ingredient[:id] == params[:id].to_i}}
+        recipes = Recipe.all.select {|recipe| recipe.ingredients.any? {|ingredient| ingredient[:id] == params[:ingredient_id].to_i}}
         render json: recipes, status: :ok
     end
 
     def check
-        recipes = Recipe.all.select {|recipe| recipe.ingredients.all? {|ingredient| User.find(params[:id]).ingredients.include?(ingredient)}}
-        render json: recipes, status: :ok
+        if check_params[:ingredient_exists] == "false" && check_params[:all_ingredients] == "false"
+            recipes = Recipe.all
+            render json: recipes, status: :ok
+        elsif check_params[:ingredient_exists] == "false" && check_params[:all_ingredients] == "true"
+            recipes = Recipe.all.select {|recipe| recipe.ingredients.all? {|ingredient| User.find(params[:user_id]).ingredients.include?(ingredient)}}
+            render json: recipes, status: :ok
+        elsif check_params[:all_ingredients] == "true"
+            recipes = Recipe.all.select {|recipe| recipe.ingredients.all? {|ingredient| User.find(params[:user_id]).ingredients.include?(ingredient)} && recipe.ingredients.exists?(id: params[:ingredient_id])}
+            # binding.break
+            render json: recipes, status: :ok
+        else
+            recipes = Recipe.all.select {|recipe| recipe.ingredients.exists?(id: params[:ingredient_id])}
+            # binding.break
+            render json: recipes, status: :ok
+        end
     end
 
     private
@@ -39,8 +52,8 @@ class RecipesController < ApplicationController
         params.permit(:name, :user_id, :steps => [])
     end
 
-    def recipe_user_params
-        params.permit(:user_id)
+    def check_params
+        params.permit(:all_ingredients, :ingredient_exists, :ingredient_id, :user_id)
     end
 
 end

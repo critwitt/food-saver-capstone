@@ -42,8 +42,8 @@ function App() {
       {!user? <Login error={'Please Login'} updateUser={updateUser}/> :
         <Routes>
           <Route path='/' element={<Home setRecipes={setRecipes}/>} />
-          <Route path='/recipes/all' element={<Recipes setRecipes={setRecipes} user={user} recipes={recipes}/>} />
-          <Route path='/recipes/ingredients/:id' element={<Recipes setRecipes={setRecipes} user={user} recipes={recipes}/>} />
+          <Route path='/recipes/all' element={<Recipes ing={false} setRecipes={setRecipes} user={user} recipes={recipes}/>} />
+          <Route path='/recipes/ingredients/:id' element={<Recipes ing={true} setRecipes={setRecipes} user={user} recipes={recipes}/>} />
           <Route path='/recipes/:id' element={<RecipePage />} />
           <Route path='/login' element={<Login />} />
           <Route path='/createaccount' element={<CreateAccount />} />

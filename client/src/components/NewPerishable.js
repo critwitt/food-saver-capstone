@@ -36,6 +36,7 @@ function NewPerishable ({user}) {
     }
 
     function handleDateChange (e) {
+        e.preventDefault()
         setDateData({...dateData, [e.target.name]: e.target.value})
     }
 

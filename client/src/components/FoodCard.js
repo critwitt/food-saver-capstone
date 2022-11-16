@@ -17,7 +17,7 @@ function FoodCard ({ setRecipes, user, ingredient }) {
     }
 
     function handleRecipe () {
-        fetch(`/searchrecipe?id=${ingredient.id}`)
+        fetch(`/searchrecipe?ingredient_id=${ingredient.id}`)
         .then(res => res.json())
         .then(data => {
             navigate(`/recipes/ingredients/${ingredient.id}`)
