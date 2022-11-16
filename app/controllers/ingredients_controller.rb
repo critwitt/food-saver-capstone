@@ -27,6 +27,11 @@ class IngredientsController < ApplicationController
         head :no_content
     end
 
+    def search
+        ingredients = Ingredient.all.select {|ingredient| ingredient[:name].downcase.include?(params[:name])}
+        render json: ingredients, status: :ok
+    end
+
     private
 
     def ingredient_params

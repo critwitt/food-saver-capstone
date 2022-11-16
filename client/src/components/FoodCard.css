@@ -8,6 +8,7 @@
 .button {
     text-align: center;
     padding: 2px;
+    cursor: pointer;
 }
 
 .findrecipes {

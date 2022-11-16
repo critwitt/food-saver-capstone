@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import {useNavigate} from 'react-router-dom'
 
 import './RecipeCard.css'
 
-function RecipeCard ({ recipe }) {
+function RecipeCard ({ user, recipe }) {
 
     const history = useNavigate();
+    const [ingredientCheck, setIngredientCheck] = useState(false)
 
     function handleClick () {
         fetch(`/recipes/${recipe.id}`)
@@ -12,10 +14,24 @@ function RecipeCard ({ recipe }) {
         .then(data => history(`/recipes/${data.id}`))
     }
 
+    let array = []
+
+    function check () {
+        for (let i=0; i<recipe.ingredients.length; ++i) {
+            if (user.ingredients.some(food => food.id === recipe.ingredients[i].id)) {
+                array.push(true)
+            } else {
+                array.push(false)
+            }
+        }
+    }
+    
+    check()
+
     return (
         <div className='recipecard' onClick={handleClick}>
             <h1>{recipe.name}</h1>
-            <p>Ingredients: {recipe.ingredients[0] ? recipe.ingredients.map(ingredient => <span key={ingredient.id}>{ingredient.name}, </span>) : "Not Listed"}</p>
+            <p>Ingredients: {recipe.ingredients[0] ? recipe.ingredients.map(ingredient => <div className={user.ingredients.some(food => food.id === ingredient.id) ? 'exists' : 'dne'} key={ingredient.id}>{ingredient.name}</div>) : "Not Listed"}</p>
             
         </div>
     )

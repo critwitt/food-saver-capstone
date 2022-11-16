@@ -1,0 +1,47 @@
+.exit {
+    font-size: 32px;
+    border-radius: 50%;
+    float: right;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    transition: 0.25s;
+}
+
+.exit:hover {
+    background-color: rgb(253, 145, 145);
+}
+
+.findfood {
+    font-size: 32px;
+    text-align: center;
+}
+
+.searchbar {
+    text-align: center;
+}
+
+.searchbarinput {
+    font-size: 20px;
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.dateinfo {
+    display: flex;
+    justify-content: center;
+}
+
+.month {
+    width: 25px;
+}
+
+.day {
+    width: 25px;
+}
+
+.year {
+    width: 50px;
+}

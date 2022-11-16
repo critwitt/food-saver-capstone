@@ -8,11 +8,11 @@
 }
 
 .meat {
-    background-color: rgb(250, 104, 104);
+    background-color: rgb(255, 121, 121);
 }
 
 .vegetable {
-    background-color: rgb(73, 233, 73);
+    background-color: rgb(143, 255, 143);
 }
 
 .grains {
@@ -24,7 +24,7 @@
 }
 
 .condiments {
-    background-color: rgb(186, 79, 79);
+    background-color: rgb(209, 88, 88);
 }
 
 .spices {

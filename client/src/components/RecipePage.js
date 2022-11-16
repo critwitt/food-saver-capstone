@@ -17,7 +17,7 @@ function RecipePage () {
     console.log(recipe)
 
     return(
-        <div>
+        <div className='allrecipes'>
             {recipe.ingredients ? <h1 className='title'>{recipe.name}</h1> : <h1>Loading</h1>}
             {recipe.ingredients ? <h2 className='author'>A Recipe by {recipe.user.name}</h2> : <h1>Loading</h1>}
             <div className='ingredients'>

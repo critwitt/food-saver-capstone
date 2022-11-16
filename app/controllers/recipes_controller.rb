@@ -1,3 +1,5 @@
+require 'debug'
+
 class RecipesController < ApplicationController
 
     def index
@@ -21,10 +23,24 @@ class RecipesController < ApplicationController
         head :no_content
     end
 
+    def search
+        recipes = Recipe.all.select {|recipe| recipe.ingredients.any? {|ingredient| ingredient[:id] == params[:id].to_i}}
+        render json: recipes, status: :ok
+    end
+
+    def check
+        recipes = Recipe.all.select {|recipe| recipe.ingredients.all? {|ingredient| User.find(params[:id]).ingredients.include?(ingredient)}}
+        render json: recipes, status: :ok
+    end
+
     private
 
     def recipe_params
         params.permit(:name, :user_id, :steps => [])
+    end
+
+    def recipe_user_params
+        params.permit(:user_id)
     end
 
 end

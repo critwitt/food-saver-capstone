@@ -2,4 +2,34 @@
     border-style: solid;
     width: 300px;
     height: 300px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.5s;
+    margin: 25px;
+}
+
+.recipecard:hover {
+    height: 325px;
+    width: 325px;
+    margin: 0px;
+}
+
+.exists {
+    display: inline-block;
+    background-color: green;
+    padding: 2px;
+    margin: 2px;
+    border-style: solid;
+    border-color: black;
+    color: white;
+}
+
+.dne {
+    display: inline-block;
+    background: red;
+    padding: 2px;
+    border-style: solid;
+    margin: 2px;
+    border-color: black;
+    color: white;
 }

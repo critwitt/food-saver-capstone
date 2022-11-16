@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   get '/authorized_user', to: 'users#show'
   delete '/logout', to: 'sessions#destroy'
   patch '/update_perishables', to: 'perishables#update_perishables'
+  get '/search', to: 'ingredients#search'
+  get '/searchrecipe', to: 'recipes#search'
+  get '/selectedrecipes', to: 'recipes#check'
 end

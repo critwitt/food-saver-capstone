@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 
 import Modal from 'react-modal'
 
-import "./FoodCard.css"
+import "./RecipeCard.css"
 
 function NewRecipe () {
 
@@ -47,7 +47,7 @@ function handleSubmit (e) {
 }
 
     return(
-        <div className="foodcard" onClick={openModal}>
+        <div className="recipecard" onClick={openModal}>
             <div className="plussign">+</div>
             <div className="newfood">Add New Recipe</div>
             <Modal isOpen={isOpen}>
