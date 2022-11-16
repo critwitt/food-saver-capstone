@@ -29,7 +29,7 @@ function FoodCard ({ setRecipes, user, ingredient }) {
 
     return (
         <div className="foodcard">
-            <img className="image" src={ingredient.image}/>
+            <img className="image" src={ingredient.image} alt={"No logo"}/>
             <h1 className="foodname">{ingredient.name}</h1>
             {ingredient.perishable ? <h2 className="expire">Expires in ~ {expiration} days</h2> : <h2 className="expire">Non-perishable</h2>}
             <div className="buttons">

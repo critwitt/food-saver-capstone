@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {useNavigate} from 'react-router-dom'
 
 import './RecipeCard.css'
@@ -6,7 +5,6 @@ import './RecipeCard.css'
 function RecipeCard ({ user, recipe }) {
 
     const history = useNavigate();
-    const [ingredientCheck, setIngredientCheck] = useState(false)
 
     function handleClick () {
         fetch(`/recipes/${recipe.id}`)

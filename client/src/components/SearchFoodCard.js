@@ -24,7 +24,7 @@ function SearchFoodCard ({user, food, date}) {
 
     return (
         <div>
-            <img className='searchimage' src={food.image} />
+            <img className='searchimage' src={food.image} alt="No logo"/>
             <div className='searchtitle'>{food.name}</div>
             <div className='searchbuttondiv'>
                 <button className='serachbutton' onClick={handleAdd}>{add}</button>

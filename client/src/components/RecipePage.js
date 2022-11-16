@@ -12,12 +12,12 @@ function RecipePage () {
         fetch(`/recipes/${id}`)
         .then(res => res.json())
         .then(data => setRecipe(data))
-    },[])
+    },[id])
 
     console.log(recipe)
 
     return(
-        <div className='allrecipes'>
+        <div>
             {recipe.ingredients ? <h1 className='title'>{recipe.name}</h1> : <h1>Loading</h1>}
             {recipe.ingredients ? <h2 className='author'>A Recipe by {recipe.user.name}</h2> : <h1>Loading</h1>}
             <div className='ingredients'>

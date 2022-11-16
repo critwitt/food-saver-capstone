@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
 import Modal from 'react-modal'
 
@@ -17,32 +17,10 @@ function NewPerishable ({user}) {
         year: ''
     })
     const [isOpen, setIsOpen] = useState(false)
-    const [food, setFood] = useState([])
     const [allFood, setAllFood] = useState([]);
-    const [formData, setFormData] = useState({
-        user_id: user.id,
-        ingredient_id: '',
-        name: '',
-        date_entered: ''
-    })
-
-    useEffect(() => {
-        fetch('/ingredients')
-        .then(res => res.json())
-        .then(data => setFood(data))
-    },[])
 
     function openModal () {
         setIsOpen(true)
-    }
-
-    function closeModal () {
-        setIsOpen(false)
-    }
-
-    function handleChange (e) {
-        console.log(formData)
-        setFormData({...formData, [e.target.name]: e.target.value})
     }
 
     function handleSearch (e) {
@@ -60,23 +38,6 @@ function NewPerishable ({user}) {
     function handleDateChange (e) {
         setDateData({...dateData, [e.target.name]: e.target.value})
     }
-
-    // function handleSubmit (e) {
-    //     e.preventDefault()
-    //     for (let i=0; i<food.length; ++i) {
-    //         if (food[i].name === formData.name) {
-    //             setFormData({...formData, ingredient_id: food[i].id})
-    //         }
-    //     }
-    //     console.log(formData)
-    //     fetch('/perishables', {
-    //         method: 'POST',
-    //         headers: {'Content-Type': 'application/json'},
-    //         body: JSON.stringify(formData)
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => console.log(data))
-    // }
 
     return (
         <div className="foodcard" onClick={openModal}>
