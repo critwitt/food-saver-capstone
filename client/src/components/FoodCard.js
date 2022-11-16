@@ -14,13 +14,17 @@ function FoodCard ({ user, ingredient }) {
         .then(data => console.log(data))
     }
 
+    const expiration = ingredient.shelf_life - expires
+
     return (
         <div className="foodcard">
             <img className="image" src={ingredient.image}/>
-            <h1>{ingredient.name}</h1>
-            {ingredient.expired ? <h2>Expired ~ {expires - ingredient.shelf_life} days ago</h2> : <h2>Expires in ~ {ingredient.shelf_life - expires} days</h2>}
-            <button className="findrecipes button">Find Recipes</button>
-            <button className="remove button" onClick={removePerishable}>Remove</button>
+            <h1 className="foodname">{ingredient.name}</h1>
+            {ingredient.perishable ? <h2 className="expire">Expires in ~ {expiration} days</h2> : <h2 className="expire">Non-perishable</h2>}
+            <div className="buttons">
+                <button className="findrecipes button">Find Recipes</button>
+                <button className="remove button" onClick={removePerishable}>Remove</button>
+            </div>  
         </div>
     )
 }

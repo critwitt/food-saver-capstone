@@ -2,3 +2,35 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.fridge {
+    padding: 20px;
+}
+
+.meat {
+    background-color: rgb(250, 104, 104);
+}
+
+.vegetable {
+    background-color: rgb(73, 233, 73);
+}
+
+.grains {
+    background-color: rgb(245, 245, 177);
+}
+
+.dairy {
+    background-color: white;
+}
+
+.condiments {
+    background-color: rgb(186, 79, 79);
+}
+
+.spices {
+    background-color: rgb(242, 190, 93);
+}
+
+.baking {
+    background-color: lavender;
+}

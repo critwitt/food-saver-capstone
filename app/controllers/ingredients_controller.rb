@@ -30,7 +30,7 @@ class IngredientsController < ApplicationController
     private
 
     def ingredient_params
-        params.permit(:name, :perishable, :shelf_life, :image)
+        params.permit(:name, :perishable, :shelf_life, :image, :category)
     end
 
 end

@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from 'react-router-dom';
 
 import Login from "./components/Login"
+import CreateAccount from "./components/CreateAccount";
 import Home from './components/Home'
 import NavBar from "./components/NavBar"
 import Recipes from "./components/Recipes"
+import RecipePage from "./components/RecipePage"
 
 import "./App.css"
 
@@ -33,7 +35,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/recipes' element={<Recipes />} />
+          <Route path='/recipes/:id' element={<RecipePage />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/createaccount' element={<CreateAccount />} />
         </Routes>
       }
     </div>

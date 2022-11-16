@@ -1,0 +1,19 @@
+.ingredients {
+    width: 25%;
+    float: left;
+    padding-left: 100px;
+}
+
+.instructions {
+    padding-right: 100px;
+    width: 75%;
+    float: right;
+}
+
+.title {
+    text-align: center;
+}
+
+.author {
+    text-align: center;
+}

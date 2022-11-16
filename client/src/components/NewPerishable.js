@@ -4,12 +4,12 @@ import Modal from 'react-modal'
 
 import "./FoodCard.css"
 
-function NewPerishable () {
+function NewPerishable ({user}) {
 
     const [isOpen, setIsOpen] = useState(false)
     const [food, setFood] = useState([])
     const [formData, setFormData] = useState({
-        user_id: 1,
+        user_id: user.id,
         ingredient_id: '',
         name: '',
         date_entered: ''
