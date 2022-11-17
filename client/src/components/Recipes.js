@@ -5,7 +5,7 @@ import './Recipes.css'
 
 import NewRecipe from './NewRecipe'
 
-function Recipes ({ ing, user, setRecipes, recipes}) {
+function Recipes ({ user, setRecipes, recipes }) {
 
     const [toggleRecipes, setToggleRecipes] = useState(true)
 

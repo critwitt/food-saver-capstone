@@ -89,20 +89,22 @@ function NewRecipe ({user}) {
 
     return(
         <div className="recipecard">
-            <div className="plussign" onClick={toggleModal}>+</div>
-            <div className="newfood">Add New Recipe</div>
+            <div className='centerme'>
+                <div className="plussignplus" onClick={toggleModal}>+</div>
+                <div className="newfood">Add New Recipe</div>
+            </div>
             <Modal isOpen={isOpen}>
                 <button className='exit' onClick={toggleModal}>X</button>
                 <div className='title big'>New Recipe</div>
                 <div className='buddies'>
-                    <div className='title small'>Number of Steps</div>
+                    <div className='title smallest'>Number of Steps</div>
                     <select className='numOfSteps' onChange={handleStepChange}>
                         {options.map(option => <option key={option + 1}>{option}</option>)}
                     </select>
                 </div>
                 <form className='form'>
                     <div className='title smaller'>Name</div>
-                    <input name='name' onChange={handleChange}></input>
+                    <input name='name' onChange={handleChange} autoComplete='Off'></input>
                     <div className='steps'>
                         <div>Steps</div>
                     </div>

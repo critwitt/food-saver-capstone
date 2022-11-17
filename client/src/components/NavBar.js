@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import "./NavBar.css"
 
-function NavBar ({user, setRecipes}) {
+function NavBar ({user, setRecipes, switchToggle}) {
 
     const navigate = useNavigate()
 
@@ -11,6 +11,7 @@ function NavBar ({user, setRecipes}) {
         fetch('/recipes')
         .then(res => res.json())
         .then(data => setRecipes(data))
+        switchToggle()
     }
 
     function handleLogout () {

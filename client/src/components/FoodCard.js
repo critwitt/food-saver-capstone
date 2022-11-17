@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 
 import "./FoodCard.css"
 
-function FoodCard ({ handleToggle, setRecipes, user, ingredient }) {
+function FoodCard ({ handleToggle, setRecipes, user, ingredient, switchToggle }) {
 
     const navigate = useNavigate()
 

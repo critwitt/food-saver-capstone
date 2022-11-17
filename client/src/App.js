@@ -13,6 +13,11 @@ import "./App.css"
 
 function App() {
   const [user, setUser] = useState(false)
+  const [toggle, setToggle] = useState(true)
+
+  function switchToggle () {
+    setToggle(!toggle)
+  }
 
   function updateUser (user) {
     setUser(user)
@@ -27,7 +32,7 @@ function App() {
         })
       }
     })
-  }, [])
+  }, [toggle])
 
   const [recipes, setRecipes] = useState([])
 
@@ -35,17 +40,17 @@ function App() {
       fetch(`/recipes`)
       .then(res => res.json())
       .then(data => setRecipes(data))
-  }, [])
+  }, [toggle])
 
   return (
     <div className="App">
-      <NavBar user={user} setRecipes={setRecipes}/>
+      <NavBar user={user} setRecipes={setRecipes} switchToggle={switchToggle}/>
       {!user? <Login error={'Please Login'} updateUser={updateUser}/> :
         <Routes>
-          <Route path='/' element={<Home setRecipes={setRecipes}/>} />
+          <Route path='/' element={<Home setRecipes={setRecipes} switchToggle={switchToggle}/>} />
           <Route path='/recipes/all' element={<Recipes ing={false} setRecipes={setRecipes} user={user} recipes={recipes}/>} />
-          <Route path='/recipes/ingredients/:id' element={<Recipes ing={true} setRecipes={setRecipes} user={user} recipes={recipes}/>} />
-          <Route path='/recipes/:id' element={<RecipePage user={user}/>} />
+          <Route path='/recipes/ingredients/:id' element={<Recipes ing={true} setRecipes={setRecipes} user={user} recipes={recipes} switchToggle={switchToggle}/>} />
+          <Route path='/recipes/:id' element={<RecipePage user={user} switchToggle={switchToggle}/>} />
           <Route path='/about' element={<About />}/>
           <Route path='/login' element={<Login />} />
           <Route path='/createaccount' element={<CreateAccount />} />

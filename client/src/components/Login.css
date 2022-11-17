@@ -1,10 +1,53 @@
 .garden {
-    height: 400px;
+    height: 300px;
     position: fixed;
     bottom: 0;
-    left: 25%;
+    left: 33%;
 }
 
 .submit {
     border-radius: 10px;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+.title {
+    padding-top: 100px;
+    margin-bottom: 0;
+}
+
+.button {
+    margin-top: 10px;
+}
+
+.signinbutton {
+    background-color: green;
+}
+
+.newaccountbutton {
+    background-color: rgb(182, 182, 255);
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.alternative {
+    padding-top: 40px;
+}
+
+
+
+.flexing {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.reverse {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.aisle {
+    height: 800px;
 }

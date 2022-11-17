@@ -5,7 +5,7 @@ import NewPerishable from "./NewPerishable"
 
 import './Home.css'
 
-function Home ({handleToggle, setRecipes}) {
+function Home ({ setRecipes, switchToggle }) {
 
     const [user, setUser] = useState(false)
     const [food, setFood] = useState(false)
@@ -43,49 +43,49 @@ function Home ({handleToggle, setRecipes}) {
                     <div className='hometitle'>Let's see what's in your fridge:</div>
                 </div>
                 <div className="foodcards">
-                    <NewPerishable handleToggle={handleToggle} user={user}/>
+                    <NewPerishable handleToggle={handleToggle} user={user} switchToggle={switchToggle}/>
                 </div>
             </div>
             <div className='shelf meat'>
                 <h1 className='foodtitle'>🍗 Meats and Eggs 🍗</h1>
                 <div className="foodcards">
-                    {user ? meats.map(meat => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={meat} key={meat.id}/>) : "Loading"}
+                    {user ? meats.map(meat => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={meat} key={meat.id} switchToggle={switchToggle}/>) : "Loading"}
                 </div>
             </div>
             <div className='shelf vegetable'>
                 <h1 className='foodtitle'>🥕 Veggies 🥕</h1>
                 <div className="foodcards">
-                    {user ? veggies.map(veg => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={veg} key={veg.id}/>) : "Loading"}
+                    {user ? veggies.map(veg => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={veg} key={veg.id} switchToggle={switchToggle}/>) : "Loading"}
                 </div>
             </div>
             <div className='shelf grains'>
                 <h1 className='foodtitle'>🌾 Grains 🌾</h1>
                 <div className="foodcards">
-                    {user ? grains.map(grain => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={grain} key={grain.id}/>) : "Loading"}
+                    {user ? grains.map(grain => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={grain} key={grain.id} switchToggle={switchToggle}/>) : "Loading"}
                 </div>
             </div>
             <div className='shelf dairy'>
                 <h1 className='foodtitle'>🐄 Dairy 🐄</h1>
                 <div className="foodcards">
-                    {user ? dairys.map(dairy => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={dairy} key={dairy.id}/>) : "Loading"}
+                    {user ? dairys.map(dairy => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={dairy} key={dairy.id} switchToggle={switchToggle}/>) : "Loading"}
                 </div>
             </div>
             <div className='shelf condiments'>
                 <h1 className='foodtitle'>🥫 Condiments & Sauces 🥫</h1>
                 <div className="foodcards">
-                    {user ? condiments.map(condiment => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={condiment} key={condiment.id}/>) : "Loading"}
+                    {user ? condiments.map(condiment => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={condiment} key={condiment.id} switchToggle={switchToggle}/>) : "Loading"}
                 </div>
             </div>
             <div className='shelf spices'>
                 <h1 className='foodtitle'>🌶️ Spice Rack 🌶️</h1>
                 <div className="foodcards">
-                    {user ? spices.map(spice => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={spice} key={spice.id}/>) : "Loading"}
+                    {user ? spices.map(spice => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={spice} key={spice.id} switchToggle={switchToggle}/>) : "Loading"}
                 </div>
             </div>
             <div className='shelf baking'>
                 <h1 className='foodtitle'>🎂 Baking Supplies 🎂</h1>
                 <div className="foodcards">
-                    {user ? bakings.map(baking => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={baking} key={baking.id}/>) : "Loading"}
+                    {user ? bakings.map(baking => <FoodCard handleToggle={handleToggle} setRecipes={setRecipes} user={user} ingredient={baking} key={baking.id} switchToggle={switchToggle}/>) : "Loading"}
                 </div>
             </div>
         </div>
