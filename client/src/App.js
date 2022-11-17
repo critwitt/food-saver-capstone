@@ -7,6 +7,7 @@ import Home from './components/Home'
 import NavBar from "./components/NavBar"
 import Recipes from "./components/Recipes"
 import RecipePage from "./components/RecipePage"
+import About from "./components/About"
 
 import "./App.css"
 
@@ -45,6 +46,7 @@ function App() {
           <Route path='/recipes/all' element={<Recipes ing={false} setRecipes={setRecipes} user={user} recipes={recipes}/>} />
           <Route path='/recipes/ingredients/:id' element={<Recipes ing={true} setRecipes={setRecipes} user={user} recipes={recipes}/>} />
           <Route path='/recipes/:id' element={<RecipePage user={user}/>} />
+          <Route path='/about' element={<About />}/>
           <Route path='/login' element={<Login />} />
           <Route path='/createaccount' element={<CreateAccount />} />
         </Routes>

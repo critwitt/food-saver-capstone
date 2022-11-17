@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import './Login.css'
+
 function Login ({ updateUser }) {
 
     const [formData, setFormData] = useState({
@@ -32,23 +34,25 @@ function Login ({ updateUser }) {
         .then(res => res.json())
         .then(user => {
             navigate('/')
+            window.location.reload()
         })
     }
 
     return(
         <div className='signup'>
-            <h1>Foodsaver</h1>
+            <h1 className='title'>Welcome to Foodsaver</h1>
             <form className="form" onSubmit={onSubmit}>
-            <div className="box username">
-                <h2>Username</h2>
-                <input className="input" name='username' value={username} onChange={handleChange}/>
-            </div>
-            <div className="box password">
-                <h2>Password</h2>
-                <input type='password' className="input" name='password' value={password} onChange={handleChange}/>
-            </div>
-            <input className='submit' type='submit' />
+                <div className="box username">
+                    <h2 className='subtitle'>Username</h2>
+                    <input className="input" name='username' value={username} onChange={handleChange}/>
+                </div>
+                <div className="box password">
+                    <h2 className='subtitle'>Password</h2>
+                    <input type='password' className="input" name='password' value={password} onChange={handleChange}/>
+                </div>
+                <input className='submit' type='submit' />
             </form>
+            <img className='garden' src='https://www.stjcsh.org/uploads/images/vegetable-garden-877-medium_408.jpg' alt="no img"/>
         </div>
     )
 }

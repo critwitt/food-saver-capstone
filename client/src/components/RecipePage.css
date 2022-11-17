@@ -62,3 +62,14 @@
 .pictures {
     display: flex;
 }
+
+.buttonborder {
+    display: flex;
+    justify-content: center;
+}
+
+.editbutton {
+    border-radius: 10px;
+    width: 50%;
+    font-size: 25px;
+}

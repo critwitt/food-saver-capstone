@@ -1,0 +1,16 @@
+.about {
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.clipart {
+    height: 500px;
+    padding-bottom: 100px;
+}

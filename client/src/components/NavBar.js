@@ -22,7 +22,7 @@ function NavBar ({user, setRecipes}) {
         .then(res => {
             if(res.ok){
                 res.json().then(user => {
-                    navigate(`/login`)
+                    navigate(`/`)
                 })
             }else {
                 res.json().then(json => console.log(json.errors))
@@ -33,7 +33,7 @@ function NavBar ({user, setRecipes}) {
     return (
         <div className='navbar'>
             <NavLink to='/' className='navlink'>Home</NavLink>
-            <NavLink to='/myfood' className='navlink'>MyFood</NavLink>
+            <NavLink to='/about' className='navlink'>About</NavLink>
             <NavLink to='/recipes/all' className='navlink' onClick={handleRecipes}>Recipes</NavLink>
             <NavLink to='/login' className='navlink' onClick={handleLogout}>Logout</NavLink>
         </div>

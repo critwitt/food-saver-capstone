@@ -60,7 +60,7 @@ groundbeef = Ingredient.create(name: "Ground Beef", perishable: true, shelf_life
 lambleg = Ingredient.create(name: "Lamb Leg", perishable: true, shelf_life: 4, image: "https://image.shutterstock.com/image-photo/fresh-raw-meat-leg-young-260nw-336046676.jpg", category: "meat")
 rackoflamb = Ingredient.create(name: "Rack of Lamb", perishable: true, shelf_life: 4, image: "https://www.dartagnan.com/on/demandware.static/-/Sites-dartagnan-live-catalog-en/default/dwab4f3957/images/products/FLAFR004-1.jpg", category: "meat")
 lambchop = Ingredient.create(name: "Lamb Chop", perishable: true, shelf_life: 4, image: "https://t3.ftcdn.net/jpg/04/06/50/38/360_F_406503847_8kfdcW6fU17vHvOzU6KxhuhTCGPA4Fn3.jpg", category: "meat")
-eggs = Ingredient.create(name: "Eggs", perishable: true, shelf_life: 30, image: "https://cdn-prod.medicalnewstoday.com/content/images/articles/283/283659/a-basket-of-eggs.jpg")
+eggs = Ingredient.create(name: "Eggs", perishable: true, shelf_life: 30, image: "https://cdn-prod.medicalnewstoday.com/content/images/articles/283/283659/a-basket-of-eggs.jpg", category: "meat")
 
 # Spices
 salt = Ingredient.create(name: "Salt", perishable: false, image: "https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2015/11/17/Production/LocalLiving/Images/we-salt1119.jpg?t=20170517", category: "spice")

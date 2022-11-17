@@ -1,0 +1,10 @@
+.garden {
+    height: 400px;
+    position: fixed;
+    bottom: 0;
+    left: 25%;
+}
+
+.submit {
+    border-radius: 10px;
+}

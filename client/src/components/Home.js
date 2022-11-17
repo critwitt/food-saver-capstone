@@ -5,7 +5,7 @@ import NewPerishable from "./NewPerishable"
 
 import './Home.css'
 
-function Home ({setRecipes}) {
+function Home ({handleToggle, setRecipes}) {
 
     const [user, setUser] = useState(false)
     const [food, setFood] = useState(false)

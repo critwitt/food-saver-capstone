@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './IngredientAddCard.css'
 
-function IngredientAddCard ({recipe, food}) {
+function IngredientAddCard ({handleToggle, recipe, food}) {
 
     const [formData, setFormData] = useState({
         ingredient_id: food.id,
@@ -24,6 +24,7 @@ function IngredientAddCard ({recipe, food}) {
         })
         .then(res => res.json())
         .then(data => console.log(data))
+        handleToggle()
     }
 
     return (

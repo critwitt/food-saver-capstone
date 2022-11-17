@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import Modal from 'react-modal'
 
 import "./RecipeCard.css"
+import "./NewRecipe.css"
 
 function NewRecipe ({user}) {
 
@@ -91,19 +92,21 @@ function NewRecipe ({user}) {
             <div className="plussign" onClick={toggleModal}>+</div>
             <div className="newfood">Add New Recipe</div>
             <Modal isOpen={isOpen}>
-                <button onClick={toggleModal}>Close</button>
-                <div>Recipe</div>
-                <div>Number of Steps</div>
-                <select className='numOfSteps' onChange={handleStepChange}>
-                    {options.map(option => <option key={option + 1}>{option}</option>)}
-                </select>
-                <form>
-                    <div>Name</div>
+                <button className='exit' onClick={toggleModal}>X</button>
+                <div className='title big'>New Recipe</div>
+                <div className='buddies'>
+                    <div className='title small'>Number of Steps</div>
+                    <select className='numOfSteps' onChange={handleStepChange}>
+                        {options.map(option => <option key={option + 1}>{option}</option>)}
+                    </select>
+                </div>
+                <form className='form'>
+                    <div className='title smaller'>Name</div>
                     <input name='name' onChange={handleChange}></input>
                     <div className='steps'>
                         <div>Steps</div>
                     </div>
-                    {stepArray.map(step => <div key={step + 1}><div>Step {step + 1}</div><input name={step} onChange={handleNewStep}></input></div>)}
+                    {stepArray.map(step => <div key={step + 1}><div>Step {step + 1}</div><textarea name={step} onChange={handleNewStep} cols='40' rows='5'></textarea></div>)}
                     <button type='submit' onClick={handleSubmit}>Submit</button>
                 </form>
             </Modal>

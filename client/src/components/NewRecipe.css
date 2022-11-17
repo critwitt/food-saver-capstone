@@ -1,0 +1,38 @@
+.exit {
+    font-size: 32px;
+    border-radius: 50%;
+    float: right;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    transition: 0.25s;
+}
+
+.big {
+    margin-bottom: 20px;
+}
+
+.small {
+    font-size: 30px;
+}
+
+.buddies {
+    display: flex;
+    justify-content: center;
+}
+
+.numOfSteps {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.form {
+    font-family: monospace;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.smaller {
+    font-size: 24px;
+    padding: 15px;
+}
