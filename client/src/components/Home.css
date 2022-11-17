@@ -1,6 +1,22 @@
+.shelf {
+    font-family: monospace;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.foodtitle {
+    display: flex;
+    font-size: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
 .foodcards {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .fridge {
@@ -8,7 +24,7 @@
 }
 
 .meat {
-    background-color: rgb(255, 121, 121);
+    background-color: rgb(249, 190, 190);
 }
 
 .vegetable {
@@ -20,7 +36,7 @@
 }
 
 .dairy {
-    background-color: white;
+    background-color: rgb(243, 233, 233);
 }
 
 .condiments {

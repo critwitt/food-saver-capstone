@@ -1,19 +1,40 @@
+.mainrecipe {
+    display: flex;
+}
+
+.recname {
+    display: flex;
+    justify-content: center;
+}
+
 .ingredients {
+    display: flex;
+    flex-direction: column;
     width: 25%;
     float: left;
-    padding-left: 100px;
+    padding-left: 10%;
 }
 
 .instructions {
-    padding-right: 100px;
+    display: flex;
+    flex-direction: column;
     width: 75%;
     float: right;
 }
 
 .title {
     text-align: center;
+    font-family: monospace;
+    font-size: 40px;
 }
 
 .author {
     text-align: center;
+    font-family: monospace;
+    font-size: 30px;
+}
+
+.mainrecipe {
+    font-family: monospace;
+    font-size: 20px;
 }

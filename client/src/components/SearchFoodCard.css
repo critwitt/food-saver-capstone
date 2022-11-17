@@ -13,4 +13,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+}
+
+.fooditem {
+    display: block;
+    border-style: solid;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(144, 248, 116);
+    border-radius: 20px;
+    font-family: monospace;
+}
+
+.searchbutton {
+    font-size: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: monospace;
 }

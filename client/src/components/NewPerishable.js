@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import Modal from 'react-modal'
 
@@ -10,6 +11,7 @@ import "./NewPerishable.css"
 function NewPerishable ({user}) {
 
     Modal.setAppElement('#root')
+    const navigate = useNavigate()
 
     const [dateData, setDateData] = useState({
         day: '',
@@ -19,8 +21,8 @@ function NewPerishable ({user}) {
     const [isOpen, setIsOpen] = useState(false)
     const [allFood, setAllFood] = useState([]);
 
-    function openModal () {
-        setIsOpen(true)
+    function toggleModal () {
+        setIsOpen(!isOpen)
     }
 
     function handleSearch (e) {
@@ -41,12 +43,12 @@ function NewPerishable ({user}) {
     }
 
     return (
-        <div className="foodcard" onClick={openModal}>
-            <div className="plussign">+</div>
+        <div className="addnew">
+            <div className="plussign" onClick={toggleModal}>+</div>
             <div className="newfood">Add New Food</div>
-            <Modal isOpen={isOpen}>
+            <Modal isOpen={isOpen} onRequestClose={toggleModal}>
+                <button className='exit' onClick={toggleModal}>X</button>
                 <form>
-                    <button className='exit'>X</button>
                     <div className='findfood'>Find a Food</div>
                     <div className='dateinfo'>
                         <div>Date Bought</div>
@@ -59,7 +61,9 @@ function NewPerishable ({user}) {
                     <div className='searchbar'>
                         <input className='searchbarinput' onChange={handleSearch}></input>
                     </div>
-                    {allFood.length > 0 ? allFood.map(food => <SearchFoodCard key={food.id} user={user} food={food} date={`${dateData.day}/${dateData.month}/${dateData.year}`}/>) : <h1> </h1>}
+                    <div className='findfoods'>
+                        {allFood.length > 0 ? allFood.map(food => <SearchFoodCard key={food.id} user={user} food={food} date={`${dateData.day}/${dateData.month}/${dateData.year}`}/>) : <h1> </h1>}
+                    </div>
                 </form>
             </Modal>
         </div>

@@ -4,3 +4,10 @@
     flex-wrap: wrap;
     padding: 45px;
 }
+
+.checkme {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

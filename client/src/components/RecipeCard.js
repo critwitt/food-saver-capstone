@@ -28,7 +28,7 @@ function RecipeCard ({ user, recipe }) {
 
     return (
         <div className='recipecard' onClick={handleClick}>
-            <h1>{recipe.name}</h1>
+            <h1 className='recname'>{recipe.name}</h1>
             <p>Ingredients: {recipe.ingredients[0] ? recipe.ingredients.map(ingredient => <div className={user.ingredients.some(food => food.id === ingredient.id) ? 'exists' : 'dne'} key={ingredient.id}>{ingredient.name}</div>) : "Not Listed"}</p>
             
         </div>

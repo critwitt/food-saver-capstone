@@ -1,11 +1,15 @@
 .recipecard {
+    display: block;
     border-style: solid;
+    border-radius: 20px;
     width: 300px;
     height: 300px;
     cursor: pointer;
     overflow: hidden;
     transition: 0.5s;
     margin: 25px;
+    font-family: monospace;
+    font-size: 15px;
 }
 
 .recipecard:hover {
@@ -16,6 +20,7 @@
 
 .exists {
     display: inline-block;
+    border-radius: 10px;
     background-color: green;
     padding: 2px;
     margin: 2px;
@@ -26,6 +31,7 @@
 
 .dne {
     display: inline-block;
+    border-radius: 10px;
     background: red;
     padding: 2px;
     border-style: solid;

@@ -25,10 +25,12 @@ function Recipes ({ ing, user, setRecipes, recipes}) {
 
     return (
         <div>
-            <h3>Only show recipes I can make</h3>
-            <input type='checkbox' onClick={handleClick}></input>
+            <div  className='checkme'>
+                <h3>Only show recipes I can make</h3>
+                <input type='checkbox' onClick={handleClick}></input>
+            </div>
             <div className='recipecards'>
-                <NewRecipe />
+                <NewRecipe user={user}/>
                 {recipes.map(recipe => <RecipeCard key={recipe.id} user={user} recipe={recipe} />)}
             </div>
         </div>

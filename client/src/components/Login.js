@@ -32,7 +32,7 @@ function Login ({ updateUser }) {
 
     return(
         <div className='signup'>
-            <h1>Login</h1>
+            <h1>Foodsaver</h1>
             <form className="form" onSubmit={onSubmit}>
             <div className="box username">
                 <h2>Username</h2>

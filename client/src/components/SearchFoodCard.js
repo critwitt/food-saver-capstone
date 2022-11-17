@@ -3,7 +3,7 @@ import './SearchFoodCard.css'
 
 function SearchFoodCard ({user, food, date}) {
 
-    const [add, setAdd] = useState("Add")
+    const [add, setAdd] = useState("Add to Fridge")
 
     function handleAdd (e) {
         e.preventDefault()
@@ -23,11 +23,11 @@ function SearchFoodCard ({user, food, date}) {
     }
 
     return (
-        <div>
+        <div className='fooditem'>
             <img className='searchimage' src={food.image} alt="No logo"/>
             <div className='searchtitle'>{food.name}</div>
             <div className='searchbuttondiv'>
-                <button className='serachbutton' onClick={handleAdd}>{add}</button>
+                <button className='searchbutton' onClick={handleAdd}>{add}</button>
             </div>
         </div>
     )

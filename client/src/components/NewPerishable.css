@@ -45,3 +45,15 @@
 .year {
     width: 50px;
 }
+
+.findfoods {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.addnew {
+    display: block;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 20px;
+}

@@ -44,7 +44,7 @@ function App() {
           <Route path='/' element={<Home setRecipes={setRecipes}/>} />
           <Route path='/recipes/all' element={<Recipes ing={false} setRecipes={setRecipes} user={user} recipes={recipes}/>} />
           <Route path='/recipes/ingredients/:id' element={<Recipes ing={true} setRecipes={setRecipes} user={user} recipes={recipes}/>} />
-          <Route path='/recipes/:id' element={<RecipePage />} />
+          <Route path='/recipes/:id' element={<RecipePage user={user}/>} />
           <Route path='/login' element={<Login />} />
           <Route path='/createaccount' element={<CreateAccount />} />
         </Routes>

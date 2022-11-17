@@ -1,0 +1,21 @@
+.inputs {
+    display: flex;
+    padding: 10px;
+}
+
+.searchimage {
+    height: 150px;
+    padding: 10px;
+}
+
+.amount {
+    width: 15px;
+    padding: 4px;
+    margin: 2px;
+}
+
+.unit {
+    width: 100px;
+    padding: 4px;
+    margin: 2px;
+}
