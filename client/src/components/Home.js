@@ -37,9 +37,14 @@ function Home ({setRecipes}) {
 
     return (
         <div className='fridge'>
-            <h1>Your Fridge</h1>
-            <div className="foodcards">
-                <NewPerishable handleToggle={handleToggle} user={user}/>
+            <div className='firstdiv'>
+                <div className='introwelcome'>
+                    <div className='hometitle'>Welcome, {user.username}</div>
+                    <div className='hometitle'>Let's see what's in your fridge:</div>
+                </div>
+                <div className="foodcards">
+                    <NewPerishable handleToggle={handleToggle} user={user}/>
+                </div>
             </div>
             <div className='shelf meat'>
                 <h1 className='foodtitle'>🍗 Meats and Eggs 🍗</h1>

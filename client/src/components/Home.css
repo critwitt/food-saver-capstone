@@ -50,3 +50,20 @@
 .baking {
     background-color: lavender;
 }
+
+.hometitle {
+    font-family: monospace;
+    font-size: 70px;
+    padding: 10px;
+}
+
+.firstdiv {
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 15%;
+}
+
+.introwelcome {
+    display: flex;
+    flex-direction: column;
+}
