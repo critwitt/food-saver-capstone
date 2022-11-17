@@ -37,15 +37,42 @@ function RecipePage ({user}) {
         }
     }
 
+    let array = []
+
+    function check () {
+        if (recipe.ingredients) {
+            for (let i=0; i<recipe.ingredients.length; ++i) {
+                if (user.ingredients.some(food => food.id === recipe.ingredients[i].id)) {
+                    array.push(true)
+                } else {
+                    array.push(false)
+                }
+            }
+        } else {
+            console.log('Loading Recipe...')
+        }
+    }
+
+    check()
+
+    console.log(recipe.ingredient_lists)
+
     return(
         <div>
-            {recipe.ingredients ? <h1 className='title'>{recipe.name}</h1> : <h1>Loading</h1>}
-            {recipe.ingredients ? <h2 className='author'>A Recipe by {recipe.user.name}</h2> : <h1>Loading</h1>}
+            <div className='testing'>
+                {recipe.ingredients ? <h1 className='title'>{recipe.name}</h1> : <h1>Loading</h1>}
+                <div className='pictures'>
+                    <img className='bigimage' src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Fork_%26_knife.svg/1200px-Fork_%26_knife.svg.png' alt='Not Available'/>
+                    {recipe.image ? <img src={recipe.image} className='bigimage' alt="Img Not Found"/> : <h1>Loading</h1>}
+                    <img className='bigimage' src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Fork_%26_knife.svg/1200px-Fork_%26_knife.svg.png' alt='Not Available'/>
+                </div>
+                {recipe.ingredients ? <h2 className='author'>A Recipe by {recipe.user.name}</h2> : <h1>Loading</h1>}
+            </div>
             <div className='mainrecipe'>
                 <div className='ingredients'>
                     <h2 className='subtitle'>Ingredients:</h2>
                     {(recipe.ingredients && user.id === recipe.user.id) ? <button onClick={toggleModal}>✏️</button> : <div></div>}
-                    {recipe.ingredients ? recipe.ingredient_lists.map(item => <ul key={item.id}>{item.ingredient_amount} {item.unit} {recipe.ingredients.find(food => food.id === item.ingredient_id).name}</ul>) : <div>Loading...</div>}
+                    {recipe.ingredients ? recipe.ingredient_lists.map(item => <div className={user.ingredients.some(food => food.id === item.ingredient_id) ? 'exists' : 'dne'} key={item.id}>{item.ingredient_amount} {item.unit} {recipe.ingredients.find(food => food.id === item.ingredient_id).name}</div>) : <div>Loading...</div>}
                 </div>
                 <div className='instructions'>
                     <h2 className='subtitle'>Instructions:</h2>

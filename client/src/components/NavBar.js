@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import "./NavBar.css"
 
-function NavBar ({setRecipes}) {
+function NavBar ({user, setRecipes}) {
 
     const navigate = useNavigate()
 
@@ -14,11 +14,19 @@ function NavBar ({setRecipes}) {
     }
 
     function handleLogout () {
-        fetch(`/logout`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            navigate(`/login`)
+        fetch(`/logout`, {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+            body:JSON.stringify(user)
+        })
+        .then(res => {
+            if(res.ok){
+                res.json().then(user => {
+                    navigate(`/login`)
+                })
+            }else {
+                res.json().then(json => console.log(json.errors))
+            }
         })
     }
 
@@ -27,7 +35,7 @@ function NavBar ({setRecipes}) {
             <NavLink to='/' className='navlink'>Home</NavLink>
             <NavLink to='/myfood' className='navlink'>MyFood</NavLink>
             <NavLink to='/recipes/all' className='navlink' onClick={handleRecipes}>Recipes</NavLink>
-            <NavLink to='/logout' className='navlink' onClick={handleLogout}>Logout</NavLink>
+            <NavLink to='/login' className='navlink' onClick={handleLogout}>Logout</NavLink>
         </div>
     )
 }

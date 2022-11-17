@@ -28,6 +28,7 @@ function RecipeCard ({ user, recipe }) {
 
     return (
         <div className='recipecard' onClick={handleClick}>
+            <img src={recipe.image} className='image' alt="Img Not Found" />
             <h1 className='recname'>{recipe.name}</h1>
             <p>Ingredients: {recipe.ingredients[0] ? recipe.ingredients.map(ingredient => <div className={user.ingredients.some(food => food.id === ingredient.id) ? 'exists' : 'dne'} key={ingredient.id}>{ingredient.name}</div>) : "Not Listed"}</p>
             

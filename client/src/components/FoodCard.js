@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 
 import "./FoodCard.css"
 
-function FoodCard ({ setRecipes, user, ingredient }) {
+function FoodCard ({ handleToggle, setRecipes, user, ingredient }) {
 
     const navigate = useNavigate()
 
@@ -14,6 +14,7 @@ function FoodCard ({ setRecipes, user, ingredient }) {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
         })
+        handleToggle()
     }
 
     function handleRecipe () {

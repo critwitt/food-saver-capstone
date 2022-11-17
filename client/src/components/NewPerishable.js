@@ -8,7 +8,7 @@ import SearchFoodCard from './SearchFoodCard'
 import "./FoodCard.css"
 import "./NewPerishable.css"
 
-function NewPerishable ({user}) {
+function NewPerishable ({handleToggle, user}) {
 
     Modal.setAppElement('#root')
     const navigate = useNavigate()
@@ -23,6 +23,7 @@ function NewPerishable ({user}) {
 
     function toggleModal () {
         setIsOpen(!isOpen)
+        handleToggle()
     }
 
     function handleSearch (e) {

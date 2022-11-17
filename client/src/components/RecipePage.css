@@ -13,6 +13,12 @@
     width: 25%;
     float: left;
     padding-left: 10%;
+    padding-right: 5%;
+}
+
+.list {
+    border-style: solid;
+    padding: 20px;
 }
 
 .instructions {
@@ -37,4 +43,22 @@
 .mainrecipe {
     font-family: monospace;
     font-size: 20px;
+}
+
+.bigimage {
+    display: block;
+    height: 300px;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.testing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pictures {
+    display: flex;
 }

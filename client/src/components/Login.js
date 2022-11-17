@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Login ({ updateUser }) {
 
@@ -6,6 +7,8 @@ function Login ({ updateUser }) {
         username: '',
         password: ''
       })
+
+    const navigate = useNavigate()
     
     const { username, password } = formData
     
@@ -27,7 +30,9 @@ function Login ({ updateUser }) {
             body: JSON.stringify(user)
         })
         .then(res => res.json())
-        .then(user => updateUser(user))
+        .then(user => {
+            navigate('/')
+        })
     }
 
     return(

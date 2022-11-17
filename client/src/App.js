@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar setRecipes={setRecipes}/>
+      <NavBar user={user} setRecipes={setRecipes}/>
       {!user? <Login error={'Please Login'} updateUser={updateUser}/> :
         <Routes>
           <Route path='/' element={<Home setRecipes={setRecipes}/>} />

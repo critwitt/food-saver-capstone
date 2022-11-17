@@ -17,6 +17,12 @@ class RecipesController < ApplicationController
         render json: recipe, status: :created
     end
 
+    def update
+        recipe = Recipe.find(params[:id])
+        recipe.update(recipe_params)
+        render json: recipe, status: :ok
+    end
+
     def destroy
         recipe = Recipe.find(params[:id])
         recipe.destroy
@@ -49,7 +55,7 @@ class RecipesController < ApplicationController
     private
 
     def recipe_params
-        params.permit(:name, :user_id, :steps => [])
+        params.permit(:name, :user_id, :image, :steps => [])
     end
 
     def check_params
