@@ -5,6 +5,24 @@ In the US, a lot of food is wasted annually in homes. A LOT of food. While globa
 FoodSaver was created as a means to mitigate food waste in household kitchens. By combining the shelf life of food with popular recipes into one application, users are able to find recipes quickly based on what's expiring soon in their kitchen. This will not only help mitigate food waste, but it will also save the user money on trips to the grocery store.
 This app has a lot of unique features. A user can add foods to their kitchen, add and edit recipes, and find recipes based on what they have available to them. There are still many features that will be implemented in the future so be on the lookout for future updates.
 
+## Technologies Used
+
+- Ruby 2.7.4
+- Rails 6.1.3
+- Active Model Serializers 0.10.12
+- NodeJS (v16), and npm
+- Postgresql 1.1
+- bcrypt 3.1.7
+- React 17.0.2
+- React-Router-Dom 5.3.3
+
+## Starting App
+
+You can use the following commands to run the application:
+
+- `rails s` will start the backend server
+- `npm start --prefix client` will start the frontend server
+
 ## Setup
 
 To setup this application first start the backend server by running `rails s` in your terminal. Then start the frontend server by running `npm start --prefix client`
